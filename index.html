@@ -5,31 +5,42 @@
   <meta charset="UTF-8">
   
     <title>Xiang的博客</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="xu fly">
     
+
+    
     <meta name="description" content="这是我的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xiang的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Xiang的博客">
+<meta property="og:description" content="这是我的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xiang的博客">
+<meta name="twitter:description" content="这是我的博客">
+
     
-    
-    
+    <link rel="alternative" href="/atom.xml" title="Xiang的博客" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
     <header>
-      <div>
+      
+<div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo2.png" alt="Xiang的博客" title="Xiang的博客"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Xiang的博客" title="Xiang的博客"/></a>
 			</div>
 			
 			<div id="textlogo">
@@ -40,20 +51,23 @@
 			</a></div>
 			<nav class="animated">
 				<ul>
-					
+					<ul>
+					 
 						<li><a href="/">首页</a></li>
 					
 						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
 					
 						<li><a href="/categories">分类</a></li>
 					
 						<li><a href="/tags">标签</a></li>
 					
 					<li>
-					
+ 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -61,39 +75,178 @@
 				</ul>
 			</nav>			
 </div>
-
     </header>
     <div id="container">
       <div id="main">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/04/04/Hexo搭建博客/" title="Hexo搭建博客" itemprop="url">
-  
-    <h1 itemprop="name">Hexo搭建博客</h1>
+   
     
-     
-           <p itemprop="description" >写博客的地方很多，新浪博客，百度空间，博客园，Jekyll，CSDN等等，但页面样式都不是很喜欢，有学长推荐Hexo,感觉很不错，所以决定就用它了。
-Hexo是一款非常优秀的博客框架。用它官网上的话说就是快速、简洁和高效。我想它最吸引人的地方就是速度，渲染几百个页面只需要几秒钟的</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/04/Hexo搭建博客/" title="Hexo搭建博客" itemprop="url">Hexo搭建博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-04T10:04:06.000Z" itemprop="datePublished"> Published 2016-04-04</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2016-04-04T10:04:06.000Z" itemprop="datePublished">2016-04-04</time>
-  </a>
-</section>
+        <p>写博客的地方很多，新浪博客，百度空间，博客园，Jekyll，CSDN等等，但页面样式都不是很喜欢，有学长推荐Hexo,感觉很不错，所以决定就用它了。</p>
+<p>Hexo是一款非常优秀的博客框架。用它官网上的话说就是快速、简洁和高效。我想它最吸引人的地方就是速度，渲染几百个页面只需要几秒钟的时间。</p>
+<p>下面简单讲一下它的搭建过程。</p>
+<h3 id="Hexo环境要求"><a href="#Hexo环境要求" class="headerlink" title="Hexo环境要求"></a>Hexo环境要求</h3><ul>
+<li><p>Node.js</p>
+</li>
+<li><p>Git</p>
+</li>
+</ul>
+<p>这两个不多说了，安装都比较简单。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Node和Git都安装好后,首先创建一个文件夹,如Blog,用户存放hexo的配置文件,然后进入Blog里安装Hexo。</p>
+<p>执行如下命令安装Hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装 Hexo 完成后，执行下列命令，初始化并安装依赖，Hexo将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>生成静态页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>本地启动预览</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><p>在github上创建名为your_user_name.github.io的仓库，例如我的github的用户名是flyxu,那么创建的仓库名称为flyxu.github.io</p>
+<p>编辑博客所在文件夹下的_config.yml文件,翻到最下面，修改deploy如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:flyxu/flyxu.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>然后执行下面命令安装 hexo-deployer-git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>最后部署到github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>然后在浏览器中输入<a href="http://flyxu.github.io" target="_blank" rel="external">http://flyxu.github.io</a> 就行了，我的github的账户叫flyxu,把这个改成你github的账户名就行了</p>
+<p>每次部署的步骤，可按以下三步来进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>一些常用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line"></span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line"></span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line"></span><br><span class="line">hexo deploy #将.deploy目录部署到GitHub</span><br><span class="line"></span><br><span class="line">hexo help # 查看帮助</span><br><span class="line"></span><br><span class="line">hexo version #查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<h3 id="主题推荐"><a href="#主题推荐" class="headerlink" title="主题推荐"></a>主题推荐</h3><p>我使用的主题是<img src="https://github.com/A-limon/pacman" alt="pacman">,Pacman是一款为Hexo打造的一款扁平化，有着响应式设计的主题。感觉非常不错。</p>
+<h4 id="安装指南"><a href="#安装指南" class="headerlink" title="安装指南"></a>安装指南</h4><p>从github上克隆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/A-limon/pacman.git themes/pacman</span><br></pre></td></tr></table></figure>
+<p>启用</p>
+<p>修改config.yml配置文件中的theme属性，将其设置为pacman.</p>
+<p>更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/pacman</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<h4 id="配置指南"><a href="#配置指南" class="headerlink" title="配置指南"></a>配置指南</h4><p>Pacman主题提供了丰富的配置属性，配置文件_config.yml位于主题根目录下。配置文件中已经包含了详细的英文注释.</p>
+<p>menu 默认没有启用 /tags 和 /categories 页面，如果需要启用请在博客目录下的source文件夹中分别建立tags 和 categories文件夹每个文件夹中分别包含一个index.md文件。内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout: tags (或categories)</span><br><span class="line">title: tags (或categories)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>因为主题中已经内置了这两个页面的模板，所以他们会被正确的解析出来。</p>
+<p>widgets: 提供了6种小工具。</p>
+<p>duoshuo: 多说评论系统。在大陆地区更好用的评论系统,填上short name,我申请的shortname是xufly</p>
+<h3 id="常见的错误"><a href="#常见的错误" class="headerlink" title="常见的错误"></a>常见的错误</h3><p>报错：ERROR Process failed: layout/.DS_Store</p>
+<p>进入主题目录的layout目录下，删除.DS_Store,然后分别进入layout/_partial/ 和 layout/_widget/目录下，删除.DS_Store.</p>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/04/04/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
         
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Hexo搭建/">Hexo搭建</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/04/Hexo搭建博客/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/04/Hexo搭建博客/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <time datetime="2016-04-04T08:50:59.000Z" itemprop="datePublished">2016-04-04</time>
-  </a>
-</section>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/04/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-04T08:50:59.000Z" itemprop="datePublished"> Published 2016-04-04</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/04/hello-world/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/04/04/hello-world/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
 
 </div>
@@ -104,51 +257,72 @@ Hexo是一款非常优秀的博客框架。用它官网上的话说就是快速�
 <aside class="clearfix">
 
   
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-			<li><a href="/categories/Hexo搭建/" title="Hexo搭建">Hexo搭建<sup>1</sup></a></li>
-		
-		</ul>
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="flyxu" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
-
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">标签云</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
-    </div>
   </div>
 
 
 
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Hexo搭建/" title="Hexo搭建">Hexo搭建<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
-      <li><a href="http://yangjian.me" target="_blank" title="YangJian">Alimon's Blog</a></li>
-      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
     </ul>
 </div>
 
+  
+
 
   <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
 
 </aside>
 </div>
@@ -161,23 +335,44 @@ Hexo是一款非常优秀的博客框架。用它官网上的话说就是快速�
 	</div>
 	
 	
-	<div class="social-font clearfix">
+	<section class="info">
+		<p> Hello ,I&#39;m Xu Xiang. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/flyxu" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
-		<a href="https://github.com/https://github.com/flyxu" target="_blank" title="github"></a>
+		
+		
+		
 		
 		
 		
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+			
 		
-		<a href="http://yoursite.com" target="_blank" title="xu fly">xu fly</a>
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="xu fly">xu fly</a>
+		
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -195,18 +390,6 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -220,6 +403,18 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
 });
 </script>
 
@@ -228,6 +423,69 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
  </html>
