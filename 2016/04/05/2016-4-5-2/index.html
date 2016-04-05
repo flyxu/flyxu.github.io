@@ -34,7 +34,7 @@
 
 在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容">
 <meta property="og:image" content="http://yoursite.com/source/img/serialVersionUID.png">
-<meta property="og:updated_time" content="2016-04-05T12:15:44.000Z">
+<meta property="og:updated_time" content="2016-04-05T12:17:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列化和反序列化">
 <meta name="twitter:description" content="概念序列化：将对象转化为字节序列
@@ -175,40 +175,16 @@
 </ul>
 <h2 id="serialVersionUID的作用"><a href="#serialVersionUID的作用" class="headerlink" title="serialVersionUID的作用"></a>serialVersionUID的作用</h2><p>s​e​r​i​a​l​V​e​r​s​i​o​n​U​I​D​:​ ​字​面​意​思​上​是​序​列​化​的​版​本​号​，凡是实现Serializable接口的类都有一个表示序列化版本标识符的静态变量</p>
 <p>serialVersionUID有两种生成方式,用鼠标点击警告框如下</p>
-<p><img src="/source/img/serialVersionUID.png" alt="img"></p>
-<p>(1)采用 <figure class="highlight plain"><figcaption><span>defalut serial version ID``` 这种方式生成的serialVersionUID是1L，例如</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>1 private static final long serialVersionUID = 1L;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">(2)采用 ```Add generated serial version ID``` 这种方式生成的serialVersionUID是根据类名，接口名，方法和属性等来生成的，例如</span><br></pre></td></tr></table></figure></p>
-<p>1 private static final long serialVersionUID = 4603642343377807741L;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在反序列的时候，如果我在Person类中添加一个字段Height,如下</span><br></pre></td></tr></table></figure></p>
-<p>package Serialize;</p>
-<p>import java.io.Serializable;</p>
-<p>public class Person implements Serializable {</p>
-<p>  //private static final long serialVersionUID = -6802256731316734610L;<br>    private int age;<br>    private String name;<br>    private String sex;<br>    private String height;</p>
-<pre><code>public int getAge() {
-    return age;
-}
-public void setAge(int age) {
-    this.age = age;
-}
-public String getName() {
-    return name;
-}
-public void setName(String name) {
-    this.name = name;
-}
-public String getSex() {
-    return sex;
-}
-public void setSex(String sex) {
-    this.sex = sex;
-}
-public String getHeight() {
-    return height;
-}
-public void setHeight(String height) {
-    this.height = height;
-}
-</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这时候对文件反序列化的时候，会出现如下错误</span><br></pre></td></tr></table></figure></p>
-<p>Exception in thread “main” java.io.InvalidClassException: Serialize.Person; local class incompatible: stream classdesc serialVersionUID = -6802256731316734610, local class serialVersionUID = -1407662779786941705<br>```<br>意思就是说，文件流中的class和classpath中的class，也就是修改过后的class，不兼容了，处于安全机制考虑，程序抛出了错误，并且拒绝载入.那么如果我们真的有需求要在序列化后添加一个字段或者方法呢？应该怎么办？那就是自己去指定serialVersionUID。将上面代码中的serialVersionUID取消注释，使新老版本的Person类中serialVersionUID值完全相等，就不会出现错误了。</p>
+<p><img src="/source/img/serialVersionUID.png" alt=""></p>
+<p>(1)采用 <code>Add defalut serial version ID</code> 这种方式生成的serialVersionUID是1L，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 private static final long serialVersionUID = 1L;</span><br></pre></td></tr></table></figure>
+<p>(2)采用 <code>Add generated serial version ID</code> 这种方式生成的serialVersionUID是根据类名，接口名，方法和属性等来生成的，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 private static final long serialVersionUID = 4603642343377807741L;</span><br></pre></td></tr></table></figure>
+<p>在反序列的时候，如果我在Person类中添加一个字段Height,如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package Serialize;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line"></span><br><span class="line">  //private static final long serialVersionUID = -6802256731316734610L;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line">    private String sex;</span><br><span class="line">    private String height;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getSex() &#123;</span><br><span class="line">		return sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSex(String sex) &#123;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getHeight() &#123;</span><br><span class="line">		return height;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setHeight(String height) &#123;</span><br><span class="line">		this.height = height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这时候对文件反序列化的时候，会出现如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.io.InvalidClassException: Serialize.Person; local class incompatible: stream classdesc serialVersionUID = -6802256731316734610, local class serialVersionUID = -1407662779786941705</span><br></pre></td></tr></table></figure>
+<p>意思就是说，文件流中的class和classpath中的class，也就是修改过后的class，不兼容了，处于安全机制考虑，程序抛出了错误，并且拒绝载入.那么如果我们真的有需求要在序列化后添加一个字段或者方法呢？应该怎么办？那就是自己去指定serialVersionUID。将上面代码中的serialVersionUID取消注释，使新老版本的Person类中serialVersionUID值完全相等，就不会出现错误了。</p>
 <p>类的serialVersionUID的默认值完全依赖于Java编译器的实现，对于同一个类，用不同的Java编译器编译，有可能会导致不同的 serialVersionUID，也有可能相同。为了提高serialVersionUID的独立性和确定性，强烈建议在一个可序列化类中显示的定义serialVersionUID，为它赋予明确的值。</p>
 <p>显式地定义serialVersionUID有两种用途：</p>
 <p>*　1、 在某些场合，希望类的不同版本对序列化兼容，因此需要确保类的不同版本具有相同的serialVersionUID；</p>
