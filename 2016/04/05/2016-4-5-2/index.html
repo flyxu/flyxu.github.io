@@ -34,7 +34,7 @@
 
 在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容">
 <meta property="og:image" content="http://yoursite.com/source/img/serialVersionUID.png">
-<meta property="og:updated_time" content="2016-04-05T12:00:39.000Z">
+<meta property="og:updated_time" content="2016-04-05T12:07:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列化和反序列化">
 <meta name="twitter:description" content="概念序列化：将对象转化为字节序列
@@ -74,7 +74,7 @@
 				<h1 class="site-name"><a href="/" title="Xiang的博客">Xiang的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -94,7 +94,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -117,14 +117,14 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T11:23:45.000Z" itemprop="datePublished"> Published 2016-04-05</time>
+    <time datetime="2016-04-05T11:23:45.000Z" itemprop="datePublished"> 发表于 2016-04-05</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用途"><span class="toc-number">2.</span> <span class="toc-text">用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化API"><span class="toc-number">3.</span> <span class="toc-text">序列化API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#范例："><span class="toc-number">4.</span> <span class="toc-text">范例：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义一个Person类，实现Serializable接口"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义一个Person类，实现Serializable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#序列化和反序列化Person类对象"><span class="toc-number">4.0.2.</span> <span class="toc-text">序列化和反序列化Person类对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#serialVersionUID的作用"><span class="toc-number">5.</span> <span class="toc-text">serialVersionUID的作用</span></a></li></ol>
 		
@@ -179,40 +179,14 @@
 <ul>
 <li><p>采用<figure class="highlight plain"><figcaption><span>defalut serial version ID```这种方式生成的serialVersionUID是1L，例如：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```1 private static final long serialVersionUID = 1L;</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>采用<code>Add generated serial version ID</code>这种方式生成的serialVersionUID是根据类名，接口名，方法和属性等来生成的，例如：</p>
+<li><p>采用<figure class="highlight plain"><figcaption><span>generated serial version ID```这种方式生成的serialVersionUID是根据类名，接口名，方法和属性等来生成的，例如：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```1 private static final long serialVersionUID = 4603642343377807741L;</span><br></pre></td></tr></table></figure></p>
 </li>
 </ul>
-<figure class="highlight plain"><figcaption><span>private static final long serialVersionUID = 4603642343377807741L;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在反序列的时候，如果我在Person类中添加一个字段Height,如下</span><br></pre></td></tr></table></figure>
-<p>package Serialize;</p>
-<p>import java.io.Serializable;</p>
-<p>public class Person implements Serializable {</p>
-<p>  //private static final long serialVersionUID = -6802256731316734610L;<br>    private int age;<br>    private String name;<br>    private String sex;<br>    private String height;</p>
-<pre><code>public int getAge() {
-    return age;
-}
-public void setAge(int age) {
-    this.age = age;
-}
-public String getName() {
-    return name;
-}
-public void setName(String name) {
-    this.name = name;
-}
-public String getSex() {
-    return sex;
-}
-public void setSex(String sex) {
-    this.sex = sex;
-}
-public String getHeight() {
-    return height;
-}
-public void setHeight(String height) {
-    this.height = height;
-}
-</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这时候对文件反序列化的时候，会出现如下错误</span><br></pre></td></tr></table></figure></p>
-<p>Exception in thread “main” java.io.InvalidClassException: Serialize.Person; local class incompatible: stream classdesc serialVersionUID = -6802256731316734610, local class serialVersionUID = -1407662779786941705<br>```<br>意思就是说，文件流中的class和classpath中的class，也就是修改过后的class，不兼容了，处于安全机制考虑，程序抛出了错误，并且拒绝载入.那么如果我们真的有需求要在序列化后添加一个字段或者方法呢？应该怎么办？那就是自己去指定serialVersionUID。将上面代码中的serialVersionUID取消注释，使新老版本的Person类中serialVersionUID值完全相等，就不会出现错误了。</p>
+<p>在反序列的时候，如果我在Person类中添加一个字段Height,如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package Serialize;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line"></span><br><span class="line">public class Person implements Serializable &#123;</span><br><span class="line"></span><br><span class="line">  //private static final long serialVersionUID = -6802256731316734610L;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line">    private String sex;</span><br><span class="line">    private String height;</span><br><span class="line"></span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getSex() &#123;</span><br><span class="line">		return sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setSex(String sex) &#123;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getHeight() &#123;</span><br><span class="line">		return height;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setHeight(String height) &#123;</span><br><span class="line">		this.height = height;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这时候对文件反序列化的时候，会出现如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread &quot;main&quot; java.io.InvalidClassException: Serialize.Person; local class incompatible: stream classdesc serialVersionUID = -6802256731316734610, local class serialVersionUID = -1407662779786941705</span><br></pre></td></tr></table></figure>
+<p>意思就是说，文件流中的class和classpath中的class，也就是修改过后的class，不兼容了，处于安全机制考虑，程序抛出了错误，并且拒绝载入.那么如果我们真的有需求要在序列化后添加一个字段或者方法呢？应该怎么办？那就是自己去指定serialVersionUID。将上面代码中的serialVersionUID取消注释，使新老版本的Person类中serialVersionUID值完全相等，就不会出现错误了。</p>
 <p>类的serialVersionUID的默认值完全依赖于Java编译器的实现，对于同一个类，用不同的Java编译器编译，有可能会导致不同的 serialVersionUID，也有可能相同。为了提高serialVersionUID的独立性和确定性，强烈建议在一个可序列化类中显示的定义serialVersionUID，为它赋予明确的值。</p>
 <p>显式地定义serialVersionUID有两种用途：</p>
 <p>*　1、 在某些场合，希望类的不同版本对序列化兼容，因此需要确保类的不同版本具有相同的serialVersionUID；</p>
@@ -270,22 +244,22 @@ public void setHeight(String height) {
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用途"><span class="toc-number">2.</span> <span class="toc-text">用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列化API"><span class="toc-number">3.</span> <span class="toc-text">序列化API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#范例："><span class="toc-number">4.</span> <span class="toc-text">范例：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义一个Person类，实现Serializable接口"><span class="toc-number">4.0.1.</span> <span class="toc-text">定义一个Person类，实现Serializable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#序列化和反序列化Person类对象"><span class="toc-number">4.0.2.</span> <span class="toc-text">序列化和反序列化Person类对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#serialVersionUID的作用"><span class="toc-number">5.</span> <span class="toc-text">serialVersionUID的作用</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github Card</p>
+<p class="asidetitle">Github 名片</p>
 <div class="github-card" data-github="flyxu" data-width="220" data-height="119" data-theme="medium">
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -295,7 +269,7 @@ public void setHeight(String height) {
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分类</p>
 		<ul>
 		
 		  
@@ -312,7 +286,7 @@ public void setHeight(String height) {
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -328,7 +302,7 @@ public void setHeight(String height) {
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -347,7 +321,7 @@ public void setHeight(String height) {
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
@@ -586,7 +560,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
