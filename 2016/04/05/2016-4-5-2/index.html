@@ -34,7 +34,7 @@
 
 在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容">
 <meta property="og:image" content="http://yoursite.com/img/serialVersionUID.png">
-<meta property="og:updated_time" content="2016-04-05T11:36:10.000Z">
+<meta property="og:updated_time" content="2016-04-05T11:50:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列化和反序列化">
 <meta name="twitter:description" content="概念序列化：将对象转化为字节序列
@@ -175,7 +175,7 @@
 </ul>
 <h2 id="serialVersionUID的作用"><a href="#serialVersionUID的作用" class="headerlink" title="serialVersionUID的作用"></a>serialVersionUID的作用</h2><p>s​e​r​i​a​l​V​e​r​s​i​o​n​U​I​D​:​ ​字​面​意​思​上​是​序​列​化​的​版​本​号​，凡是实现Serializable接口的类都有一个表示序列化版本标识符的静态变量</p>
 <p>serialVersionUID有两种生成方式,用鼠标点击警告框如下:</p>
-<p><img src="img/serialVersionUID.png" alt=""></p>
+<p><img src="/img/serialVersionUID.png" alt=""></p>
 <ul>
 <li>采用<code>Add defalut serial version ID</code><br>这种方式生成的serialVersionUID是1L，例如：</li>
 </ul>
