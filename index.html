@@ -98,16 +98,16 @@
 </header>
     <div class="article-content">
         
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>序列化：将对象转化为字节序列</p>
-<p>反序列化：将字节序列恢复为对象</p>
-<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><ul>
-<li><p>把对象的字节序列永久地保存到硬盘上，通常存放在一个文件中；</p>
+        <h2 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h2><p>&#x5E8F;&#x5217;&#x5316;&#xFF1A;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x5B57;&#x8282;&#x5E8F;&#x5217;</p>
+<p>&#x53CD;&#x5E8F;&#x5217;&#x5316;&#xFF1A;&#x5C06;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x6062;&#x590D;&#x4E3A;&#x5BF9;&#x8C61;</p>
+<h2 id="&#x7528;&#x9014;"><a href="#&#x7528;&#x9014;" class="headerlink" title="&#x7528;&#x9014;"></a>&#x7528;&#x9014;</h2><ul>
+<li><p>&#x628A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x6C38;&#x4E45;&#x5730;&#x4FDD;&#x5B58;&#x5230;&#x786C;&#x76D8;&#x4E0A;&#xFF0C;&#x901A;&#x5E38;&#x5B58;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</p>
 </li>
-<li><p>在网络上传送对象的字节序列。</p>
+<li><p>&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x4F20;&#x9001;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x3002;</p>
 </li>
 </ul>
-<p>在很多应用中，需要对某些对象进行序列化，让它们离开内存空间，入住物理硬盘，以便长期保存。比如最常见的是Web服务器中的Session对象，当有 10万用户并发访问，就有可能出现10万个Session对象，内存可能吃不消，于是Web容器就会把一些seesion先序列化到硬盘中，等要用了，再把保存在硬盘中的对象还原到内存中。</p>
-<p>当两个进程在进行远程通信时，彼此可以发送各种类型的数据。无论是何种类型的数据，都会以二进制序列的形式在网络上传送。发送方需要把这个Java对象转换为字节序列，才能在网络上传送；接收方则需要把字节序列再恢复为Java对象。</p>
+<p>&#x5728;&#x5F88;&#x591A;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x67D0;&#x4E9B;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x8BA9;&#x5B83;&#x4EEC;&#x79BB;&#x5F00;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF0C;&#x5165;&#x4F4F;&#x7269;&#x7406;&#x786C;&#x76D8;&#xFF0C;&#x4EE5;&#x4FBF;&#x957F;&#x671F;&#x4FDD;&#x5B58;&#x3002;&#x6BD4;&#x5982;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x662F;Web&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;Session&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x6709; 10&#x4E07;&#x7528;&#x6237;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#xFF0C;&#x5C31;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;10&#x4E07;&#x4E2A;Session&#x5BF9;&#x8C61;&#xFF0C;&#x5185;&#x5B58;&#x53EF;&#x80FD;&#x5403;&#x4E0D;&#x6D88;&#xFF0C;&#x4E8E;&#x662F;Web&#x5BB9;&#x5668;&#x5C31;&#x4F1A;&#x628A;&#x4E00;&#x4E9B;seesion&#x5148;&#x5E8F;&#x5217;&#x5316;&#x5230;&#x786C;&#x76D8;&#x4E2D;&#xFF0C;&#x7B49;&#x8981;&#x7528;&#x4E86;&#xFF0C;&#x518D;&#x628A;&#x4FDD;&#x5B58;&#x5728;&#x786C;&#x76D8;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x8FD8;&#x539F;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#x3002;</p>
+<p>&#x5F53;&#x4E24;&#x4E2A;&#x8FDB;&#x7A0B;&#x5728;&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65F6;&#xFF0C;&#x5F7C;&#x6B64;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;&#x65E0;&#x8BBA;&#x662F;&#x4F55;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x90FD;&#x4F1A;&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;&#x7684;&#x5F62;&#x5F0F;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x4F20;&#x9001;&#x3002;&#x53D1;&#x9001;&#x65B9;&#x9700;&#x8981;&#x628A;&#x8FD9;&#x4E2A;Java&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#xFF0C;&#x624D;&#x80FD;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x4F20;&#x9001;&#xFF1B;&#x63A5;&#x6536;&#x65B9;&#x5219;&#x9700;&#x8981;&#x628A;&#x5B57;&#x8282;&#x5E8F;&#x5217;&#x518D;&#x6062;&#x590D;&#x4E3A;Java&#x5BF9;&#x8C61;&#x3002;</p>
         
         
         <p class="article-more-link">
@@ -171,9 +171,9 @@
 </header>
     <div class="article-content">
         
-        <p>写博客的地方很多，新浪博客，百度空间，博客园，Jekyll，CSDN等等，但页面样式都不是很喜欢，有学长推荐Hexo,感觉很不错，所以决定就用它了。</p>
-<p>Hexo是一款非常优秀的博客框架。用它官网上的话说就是快速、简洁和高效。我想它最吸引人的地方就是速度，渲染几百个页面只需要几秒钟的时间。</p>
-<p>下面简单讲一下它的搭建过程。</p>
+        <p>&#x5199;&#x535A;&#x5BA2;&#x7684;&#x5730;&#x65B9;&#x5F88;&#x591A;&#xFF0C;&#x65B0;&#x6D6A;&#x535A;&#x5BA2;&#xFF0C;&#x767E;&#x5EA6;&#x7A7A;&#x95F4;&#xFF0C;&#x535A;&#x5BA2;&#x56ED;&#xFF0C;Jekyll&#xFF0C;CSDN&#x7B49;&#x7B49;&#xFF0C;&#x4F46;&#x9875;&#x9762;&#x6837;&#x5F0F;&#x90FD;&#x4E0D;&#x662F;&#x5F88;&#x559C;&#x6B22;&#xFF0C;&#x6709;&#x5B66;&#x957F;&#x63A8;&#x8350;Hexo,&#x611F;&#x89C9;&#x5F88;&#x4E0D;&#x9519;&#xFF0C;&#x6240;&#x4EE5;&#x51B3;&#x5B9A;&#x5C31;&#x7528;&#x5B83;&#x4E86;&#x3002;</p>
+<p>Hexo&#x662F;&#x4E00;&#x6B3E;&#x975E;&#x5E38;&#x4F18;&#x79C0;&#x7684;&#x535A;&#x5BA2;&#x6846;&#x67B6;&#x3002;&#x7528;&#x5B83;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x8BDD;&#x8BF4;&#x5C31;&#x662F;&#x5FEB;&#x901F;&#x3001;&#x7B80;&#x6D01;&#x548C;&#x9AD8;&#x6548;&#x3002;&#x6211;&#x60F3;&#x5B83;&#x6700;&#x5438;&#x5F15;&#x4EBA;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x662F;&#x901F;&#x5EA6;&#xFF0C;&#x6E32;&#x67D3;&#x51E0;&#x767E;&#x4E2A;&#x9875;&#x9762;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x79D2;&#x949F;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7B80;&#x5355;&#x8BB2;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x642D;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;</p>
         
         
         <p class="article-more-link">
@@ -237,8 +237,8 @@
 </header>
     <div class="article-content">
         
-        <p>从今天开始决定写博客了，其实很早之前就有写博客的打算，一方面是想提升自己的写作和总结能力，因为感觉自己写的文章真是有点渣，自己都不忍心看。另一方面也是为了给自己做笔记，因为发现做过的东西总是会忘掉，只留下一些模糊的印象。每次都需要花费额外的时间重新上手，消耗不少精力。我想最好的方法就是把做过的东西找一个地方记录下来，这样也方便及时的查阅与巩固，看自己的东西终究比看别人的要熟悉的多。</p>
-<p>这是我的第一篇博客，今天就简单的扯到这儿吧。。。。。。</p>
+        <p>&#x4ECE;&#x4ECA;&#x5929;&#x5F00;&#x59CB;&#x51B3;&#x5B9A;&#x5199;&#x535A;&#x5BA2;&#x4E86;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x65E9;&#x4E4B;&#x524D;&#x5C31;&#x6709;&#x5199;&#x535A;&#x5BA2;&#x7684;&#x6253;&#x7B97;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x662F;&#x60F3;&#x63D0;&#x5347;&#x81EA;&#x5DF1;&#x7684;&#x5199;&#x4F5C;&#x548C;&#x603B;&#x7ED3;&#x80FD;&#x529B;&#xFF0C;&#x56E0;&#x4E3A;&#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x6587;&#x7AE0;&#x771F;&#x662F;&#x6709;&#x70B9;&#x6E23;&#xFF0C;&#x81EA;&#x5DF1;&#x90FD;&#x4E0D;&#x5FCD;&#x5FC3;&#x770B;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#x4E5F;&#x662F;&#x4E3A;&#x4E86;&#x7ED9;&#x81EA;&#x5DF1;&#x505A;&#x7B14;&#x8BB0;&#xFF0C;&#x56E0;&#x4E3A;&#x53D1;&#x73B0;&#x505A;&#x8FC7;&#x7684;&#x4E1C;&#x897F;&#x603B;&#x662F;&#x4F1A;&#x5FD8;&#x6389;&#xFF0C;&#x53EA;&#x7559;&#x4E0B;&#x4E00;&#x4E9B;&#x6A21;&#x7CCA;&#x7684;&#x5370;&#x8C61;&#x3002;&#x6BCF;&#x6B21;&#x90FD;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x989D;&#x5916;&#x7684;&#x65F6;&#x95F4;&#x91CD;&#x65B0;&#x4E0A;&#x624B;&#xFF0C;&#x6D88;&#x8017;&#x4E0D;&#x5C11;&#x7CBE;&#x529B;&#x3002;&#x6211;&#x60F3;&#x6700;&#x597D;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x628A;&#x505A;&#x8FC7;&#x7684;&#x4E1C;&#x897F;&#x627E;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x65B9;&#x4FBF;&#x53CA;&#x65F6;&#x7684;&#x67E5;&#x9605;&#x4E0E;&#x5DE9;&#x56FA;&#xFF0C;&#x770B;&#x81EA;&#x5DF1;&#x7684;&#x4E1C;&#x897F;&#x7EC8;&#x7A76;&#x6BD4;&#x770B;&#x522B;&#x4EBA;&#x7684;&#x8981;&#x719F;&#x6089;&#x7684;&#x591A;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x7BC7;&#x535A;&#x5BA2;&#xFF0C;&#x4ECA;&#x5929;&#x5C31;&#x7B80;&#x5355;&#x7684;&#x626F;&#x5230;&#x8FD9;&#x513F;&#x5427;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;</p>
 
         
         
@@ -292,7 +292,7 @@
     <div class="article-content">
         
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
