@@ -50,7 +50,7 @@
 <meta property="og:image" content="http://yoursite.com/2016/05/16/2016-5-16/31.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/16/2016-5-16/28.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/16/2016-5-16/29.png">
-<meta property="og:updated_time" content="2016-05-17T05:06:41.000Z">
+<meta property="og:updated_time" content="2016-05-17T05:10:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDA">
 <meta name="twitter:description" content="LDA&amp;#x7684;&amp;#x5168;&amp;#x79F0;&amp;#x662F;Linear Discriminant Analysis&amp;#xFF08;&amp;#x7EBF;&amp;#x6027;&amp;#x5224;&amp;#x522B;&amp;#x5206;&amp;#x6790;&amp;#xFF09;&amp;#xFF0C;&amp;#x6709;&amp;#x4E9B;&amp;#x8D44;&amp;#x6599;&amp;#x4E0A;&amp;#x4E5F;&amp;#x79F0;&amp;#x4E3A;&amp;">
@@ -82,7 +82,7 @@
 				<h1 class="site-name"><a href="/" title="Xiang的博客">Xiang的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -102,7 +102,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -125,20 +125,21 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-16T12:01:47.000Z" itemprop="datePublished"> 發表於 2016-05-16</time>
+    <time datetime="2016-05-16T12:01:47.000Z" itemprop="datePublished"> Published 2016-05-16</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
 		</div>
 		
 		<p>LDA&#x7684;&#x5168;&#x79F0;&#x662F;Linear Discriminant Analysis&#xFF08;&#x7EBF;&#x6027;&#x5224;&#x522B;&#x5206;&#x6790;&#xFF09;&#xFF0C;&#x6709;&#x4E9B;&#x8D44;&#x6599;&#x4E0A;&#x4E5F;&#x79F0;&#x4E3A;&#x662F;Fisher&#x2019;s Linear Discriminant&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x88AB;Ronald Fisher&#x53D1;&#x660E;&#x81EA;1936&#x5E74;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x3002;</p>
+<a id="more"></a>
 <p>LDA&#x7684;&#x539F;&#x7406;&#x662F;&#xFF0C;&#x5C06;&#x5E26;&#x4E0A;&#x6807;&#x7B7E;&#x7684;&#x6570;&#x636E;&#xFF08;&#x70B9;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x6295;&#x5F71;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6295;&#x5F71;&#x5230;&#x7EF4;&#x5EA6;&#x66F4;&#x4F4E;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x4F7F;&#x5F97;&#x6295;&#x5F71;&#x540E;&#x7684;&#x70B9;&#xFF0C;&#x4F1A;&#x5F62;&#x6210;&#x6309;&#x7C7B;&#x522B;&#x533A;&#x5206;&#xFF0C;&#x4E00;&#x7C07;&#x4E00;&#x7C07;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x76F8;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x70B9;&#xFF0C;&#x5C06;&#x4F1A;&#x5728;&#x6295;&#x5F71;&#x540E;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x66F4;&#x63A5;&#x8FD1;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x53EA;&#x8BA8;&#x8BBA;&#x4E8C;&#x5206;&#x7C7B;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;y=1&#x6216;&#x8005;y=0&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x89C9;&#x5F97;&#x539F;&#x59CB;&#x7279;&#x5F81;&#x6570;&#x592A;&#x591A;&#xFF0C;&#x60F3;&#x5C06;d&#x7EF4;&#x7279;&#x5F81;&#x964D;&#x5230;&#x53EA;&#x6709;&#x4E00;&#x7EF4;&#xFF0C;&#x800C;&#x53C8;&#x8981;&#x4FDD;&#x8BC1;&#x7C7B;&#x522B;&#x80FD;&#x591F;&#x201C;&#x6E05;&#x6670;&#x201D;&#x5730;&#x53CD;&#x6620;&#x5728;&#x4F4E;&#x7EF4;&#x6570;&#x636E;&#x4E0A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E00;&#x7EF4;&#x5C31;&#x80FD;&#x51B3;&#x5B9A;&#x6BCF;&#x4E2A;&#x6837;&#x4F8B;&#x7684;&#x7C7B;&#x522B;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x6700;&#x4F73;&#x7684;&#x5411;&#x91CF;&#x79F0;&#x4E3A;w&#xFF08;d&#x7EF4;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6837;&#x4F8B;x&#xFF08;d&#x7EF4;&#xFF09;&#x5230;w&#x4E0A;&#x7684;&#x6295;&#x5F71;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x5F0F;&#x6765;&#x8BA1;&#x7B97;</p>
@@ -251,22 +252,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github 名片</p>
+<p class="asidetitle">Github Card</p>
 <div class="github-card" data-github="flyxu" data-width="220" data-height="119" data-theme="medium">
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -276,7 +277,7 @@
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -301,7 +302,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -325,7 +326,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -344,7 +345,7 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -583,7 +584,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

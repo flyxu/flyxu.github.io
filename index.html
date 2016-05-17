@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="Xiang的博客">Xiang的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -67,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -92,76 +92,18 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-16T12:01:47.000Z" itemprop="datePublished"> 發表於 2016-05-16</time>
+    <time datetime="2016-05-16T12:01:47.000Z" itemprop="datePublished"> Published 2016-05-16</time>
     
   </p>
 </header>
     <div class="article-content">
         
         <p>LDA&#x7684;&#x5168;&#x79F0;&#x662F;Linear Discriminant Analysis&#xFF08;&#x7EBF;&#x6027;&#x5224;&#x522B;&#x5206;&#x6790;&#xFF09;&#xFF0C;&#x6709;&#x4E9B;&#x8D44;&#x6599;&#x4E0A;&#x4E5F;&#x79F0;&#x4E3A;&#x662F;Fisher&#x2019;s Linear Discriminant&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x88AB;Ronald Fisher&#x53D1;&#x660E;&#x81EA;1936&#x5E74;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x76D1;&#x7763;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>LDA&#x7684;&#x539F;&#x7406;&#x662F;&#xFF0C;&#x5C06;&#x5E26;&#x4E0A;&#x6807;&#x7B7E;&#x7684;&#x6570;&#x636E;&#xFF08;&#x70B9;&#xFF09;&#xFF0C;&#x901A;&#x8FC7;&#x6295;&#x5F71;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6295;&#x5F71;&#x5230;&#x7EF4;&#x5EA6;&#x66F4;&#x4F4E;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#xFF0C;&#x4F7F;&#x5F97;&#x6295;&#x5F71;&#x540E;&#x7684;&#x70B9;&#xFF0C;&#x4F1A;&#x5F62;&#x6210;&#x6309;&#x7C7B;&#x522B;&#x533A;&#x5206;&#xFF0C;&#x4E00;&#x7C07;&#x4E00;&#x7C07;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x76F8;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x70B9;&#xFF0C;&#x5C06;&#x4F1A;&#x5728;&#x6295;&#x5F71;&#x540E;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x66F4;&#x63A5;&#x8FD1;&#x3002;</p>
-<p>&#x8FD9;&#x91CC;&#x53EA;&#x8BA8;&#x8BBA;&#x4E8C;&#x5206;&#x7C7B;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;y=1&#x6216;&#x8005;y=0&#x3002;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x89C9;&#x5F97;&#x539F;&#x59CB;&#x7279;&#x5F81;&#x6570;&#x592A;&#x591A;&#xFF0C;&#x60F3;&#x5C06;d&#x7EF4;&#x7279;&#x5F81;&#x964D;&#x5230;&#x53EA;&#x6709;&#x4E00;&#x7EF4;&#xFF0C;&#x800C;&#x53C8;&#x8981;&#x4FDD;&#x8BC1;&#x7C7B;&#x522B;&#x80FD;&#x591F;&#x201C;&#x6E05;&#x6670;&#x201D;&#x5730;&#x53CD;&#x6620;&#x5728;&#x4F4E;&#x7EF4;&#x6570;&#x636E;&#x4E0A;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E00;&#x7EF4;&#x5C31;&#x80FD;&#x51B3;&#x5B9A;&#x6BCF;&#x4E2A;&#x6837;&#x4F8B;&#x7684;&#x7C7B;&#x522B;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E2A;&#x6700;&#x4F73;&#x7684;&#x5411;&#x91CF;&#x79F0;&#x4E3A;w&#xFF08;d&#x7EF4;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6837;&#x4F8B;x&#xFF08;d&#x7EF4;&#xFF09;&#x5230;w&#x4E0A;&#x7684;&#x6295;&#x5F71;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x5F0F;&#x6765;&#x8BA1;&#x7B97;</p>
-<p><img src="/2016/05/16/2016-5-16/1.png" alt=""></p>
-<p>&#x8FD9;&#x91CC;&#x5F97;&#x5230;&#x7684;y&#x503C;&#x4E0D;&#x662F;0/1&#x503C;&#xFF0C;&#x800C;&#x662F;x&#x6295;&#x5F71;&#x5230;&#x76F4;&#x7EBF;&#x4E0A;&#x7684;&#x70B9;&#x5230;&#x539F;&#x70B9;&#x7684;&#x8DDD;&#x79BB;&#x3002;</p>
-<p>&#x5F53;x&#x662F;&#x4E8C;&#x7EF4;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x662F;&#x8981;&#x627E;&#x4E00;&#x6761;&#x76F4;&#x7EBF;&#xFF08;&#x65B9;&#x5411;&#x4E3A;w&#xFF09;&#x6765;&#x505A;&#x6295;&#x5F71;&#xFF0C;&#x7136;&#x540E;&#x5BFB;&#x627E;&#x6700;&#x80FD;&#x4F7F;&#x6837;&#x672C;&#x70B9;&#x5206;&#x79BB;&#x7684;&#x76F4;&#x7EBF;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
-<p><img src="/2016/05/16/2016-5-16/2.png" alt=""></p>
-<p>&#x4ECE;&#x76F4;&#x89C2;&#x4E0A;&#x6765;&#x770B;&#xFF0C;&#x53F3;&#x56FE;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x5C06;&#x4E0D;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x6837;&#x672C;&#x70B9;&#x5206;&#x79BB;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x4ECE;&#x5B9A;&#x91CF;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x627E;&#x5230;&#x8FD9;&#x4E2A;&#x6700;&#x4F73;&#x7684;w&#x3002;</p>
-<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5BFB;&#x627E;&#x6BCF;&#x7C7B;&#x6837;&#x4F8B;&#x7684;&#x5747;&#x503C;&#xFF08;&#x4E2D;&#x5FC3;&#x70B9;&#xFF09;&#xFF0C;&#x8FD9;&#x91CC;i&#x53EA;&#x6709;&#x4E24;&#x4E2A;</p>
-<p><img src="/2016/05/16/2016-5-16/3.png" alt=""></p>
-<p>&#x7531;&#x4E8E;x&#x5230;w&#x6295;&#x5F71;&#x540E;&#x7684;&#x6837;&#x672C;&#x70B9;&#x5747;&#x503C;&#x4E3A;</p>
-<p><img src="/2016/05/16/2016-5-16/4.png" alt=""></p>
-<p>&#x7531;&#x6B64;&#x53EF;&#x77E5;&#xFF0C;&#x6295;&#x5F71;&#x540E;&#x7684;&#x7684;&#x5747;&#x503C;&#x4E5F;&#x5C31;&#x662F;&#x6837;&#x672C;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x6295;&#x5F71;&#x3002;</p>
-<p>&#x4EC0;&#x4E48;&#x662F;&#x6700;&#x4F73;&#x7684;&#x76F4;&#x7EBF;&#xFF08;w&#xFF09;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x53D1;&#x73B0;&#xFF0C;&#x80FD;&#x591F;&#x4F7F;&#x6295;&#x5F71;&#x540E;&#x7684;&#x4E24;&#x7C7B;&#x6837;&#x672C;&#x4E2D;&#x5FC3;&#x70B9;&#x5C3D;&#x91CF;&#x5206;&#x79BB;&#x7684;&#x76F4;&#x7EBF;&#x662F;&#x597D;&#x7684;&#x76F4;&#x7EBF;&#xFF0C;&#x5B9A;&#x91CF;&#x8868;&#x793A;&#x5C31;&#x662F;&#xFF1A;</p>
-<p><img src="/2016/05/16/2016-5-16/5.png" alt=""></p>
-<p>J(w)&#x8D8A;&#x5927;&#x8D8A;&#x597D;&#x3002;</p>
-<p>&#x4F46;&#x662F;&#x53EA;&#x8003;&#x8651;J(w)&#x884C;&#x4E0D;&#x884C;&#x5462;&#xFF1F;&#x4E0D;&#x884C;&#xFF0C;&#x770B;&#x4E0B;&#x56FE;</p>
-<p><img src="/2016/05/16/2016-5-16/6.png" alt=""></p>
-<p>&#x6837;&#x672C;&#x70B9;&#x5747;&#x5300;&#x5206;&#x5E03;&#x5728;&#x692D;&#x5706;&#x91CC;&#xFF0C;&#x6295;&#x5F71;&#x5230;&#x6A2A;&#x8F74;x1&#x4E0A;&#x65F6;&#x80FD;&#x591F;&#x83B7;&#x5F97;&#x66F4;&#x5927;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;&#x95F4;&#x8DDD;J(w)&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x6709;&#x91CD;&#x53E0;&#xFF0C;x1&#x4E0D;&#x80FD;&#x5206;&#x79BB;&#x6837;&#x672C;&#x70B9;&#x3002;&#x6295;&#x5F71;&#x5230;&#x7EB5;&#x8F74;x2&#x4E0A;&#xFF0C;&#x867D;&#x7136;J(w)&#x8F83;&#x5C0F;&#xFF0C;&#x4F46;&#x662F;&#x80FD;&#x591F;&#x5206;&#x79BB;&#x6837;&#x672C;&#x70B9;&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;&#x6837;&#x672C;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x65B9;&#x5DEE;&#xFF0C;&#x65B9;&#x5DEE;&#x8D8A;&#x5927;&#xFF0C;&#x6837;&#x672C;&#x70B9;&#x8D8A;&#x96BE;&#x4EE5;&#x5206;&#x79BB;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5EA6;&#x91CF;&#x503C;&#xFF0C;&#x79F0;&#x4F5C;&#x6563;&#x5217;&#x503C;&#xFF08;scatter&#xFF09;&#xFF0C;&#x5BF9;&#x6295;&#x5F71;&#x540E;&#x7684;&#x7C7B;&#x6C42;&#x6563;&#x5217;&#x503C;&#xFF0C;&#x5982;&#x4E0B;</p>
-<p><img src="/2016/05/16/2016-5-16/6.png" alt=""></p>
-<p>&#x4ECE;&#x516C;&#x5F0F;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x53EA;&#x662F;&#x5C11;&#x9664;&#x4EE5;&#x6837;&#x672C;&#x6570;&#x91CF;&#x7684;&#x65B9;&#x5DEE;&#x503C;&#xFF0C;&#x6563;&#x5217;&#x503C;&#x7684;&#x51E0;&#x4F55;&#x610F;&#x4E49;&#x662F;&#x6837;&#x672C;&#x70B9;&#x7684;&#x5BC6;&#x96C6;&#x7A0B;&#x5EA6;&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#xFF0C;&#x8D8A;&#x5206;&#x6563;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x8D8A;&#x96C6;&#x4E2D;&#x3002;</p>
-<p>&#x800C;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;&#x6295;&#x5F71;&#x540E;&#x7684;&#x6837;&#x672C;&#x70B9;&#x7684;&#x6837;&#x5B50;&#x662F;&#xFF1A;&#x4E0D;&#x540C;&#x7C7B;&#x522B;&#x7684;&#x6837;&#x672C;&#x70B9;&#x8D8A;&#x5206;&#x5F00;&#x8D8A;&#x597D;&#xFF0C;&#x540C;&#x7C7B;&#x7684;&#x8D8A;&#x805A;&#x96C6;&#x8D8A;&#x597D;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5747;&#x503C;&#x5DEE;&#x8D8A;&#x5927;&#x8D8A;&#x597D;&#xFF0C;&#x6563;&#x5217;&#x503C;&#x8D8A;&#x5C0F;&#x8D8A;&#x597D;&#x3002;&#x6B63;&#x597D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;J(w)&#x548C;S&#x6765;&#x5EA6;&#x91CF;&#xFF0C;&#x6700;&#x7EC8;&#x7684;&#x5EA6;&#x91CF;&#x516C;&#x5F0F;&#x662F;</p>
-<p><img src="/2016/05/16/2016-5-16/7.png" alt=""></p>
-<p>&#x5148;&#x628A;&#x6563;&#x5217;&#x503C;&#x516C;&#x5F0F;&#x5C55;&#x5F00;</p>
-<p><img src="/2016/05/16/2016-5-16/8.png" alt=""></p>
-<p>&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E0A;&#x5F0F;&#x4E2D;&#x4E2D;&#x95F4;&#x90A3;&#x90E8;&#x5206;</p>
-<p><img src="/2016/05/16/2016-5-16/9.png" alt=""></p>
-<p>&#x8FD9;&#x4E2A;&#x516C;&#x5F0F;&#x7684;&#x6837;&#x5B50;&#x4E0D;&#x5C31;&#x662F;&#x5C11;&#x9664;&#x4EE5;&#x6837;&#x4F8B;&#x6570;&#x7684;&#x534F;&#x65B9;&#x5DEE;&#x77E9;&#x9635;&#x4E48;&#xFF0C;&#x79F0;&#x4E3A;&#x6563;&#x5217;&#x77E9;&#x9635;&#xFF08;scatter matrices&#xFF09;</p>
-<p>&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x5B9A;&#x4E49;</p>
-<p><img src="/2016/05/16/2016-5-16/10.png" alt=""></p>
-<p><img src="/2016/05/16/2016-5-16/11.png" alt="">&#x79F0;&#x4E3A;Within-class scatter matrix&#x3002;</p>
-<p>&#x66FF;&#x4EE3;&#x5206;&#x6BCD;&#x4E2D;&#x7684;&#x90E8;&#x5206;&#x5F97;&#x5230;</p>
-<p><img src="/2016/05/16/2016-5-16/12.png" alt=""></p>
-<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C55;&#x5F00;&#x5206;&#x5B50;</p>
-<p><img src="/2016/05/16/2016-5-16/13.png" alt=""></p>
-<p><img src="/2016/05/16/2016-5-16/14.png" alt="">&#x79F0;&#x4E3A;Between-class scatter&#xFF0C;&#x662F;&#x4E24;&#x4E2A;&#x5411;&#x91CF;&#x7684;&#x5916;&#x79EF;&#xFF0C;&#x867D;&#x7136;&#x662F;&#x4E2A;&#x77E9;&#x9635;&#xFF0C;&#x4F46;&#x79E9;&#x4E3A;1&#x3002;</p>
-<p>&#x90A3;&#x4E48;J(w)&#x6700;&#x7EC8;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;</p>
-<p><img src="/2016/05/16/2016-5-16/15.png" alt=""></p>
-<p>&#x8FD9;&#x5C31;&#x662F;LDA&#x6700;&#x5927;&#x5316;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x5373;<img src="/2016/05/16/2016-5-16/11.png" alt="">&#x548C;<img src="/2016/05/16/2016-5-16/14.png" alt="">&#x7684;&#x201C;&#x5E7F;&#x4E49;&#x745E;&#x5229;&#x5546;&#x201D;</p>
-<p>&#x5728;&#x6211;&#x4EEC;&#x6C42;&#x5BFC;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x5206;&#x6BCD;&#x8FDB;&#x884C;&#x5F52;&#x4E00;&#x5316;&#xFF0C;&#x56E0;&#x4E3A;&#x4E0D;&#x505A;&#x5F52;&#x4E00;&#x7684;&#x8BDD;&#xFF0C;w&#x6269;&#x5927;&#x4EFB;&#x4F55;&#x500D;&#xFF0C;&#x90FD;&#x6210;&#x7ACB;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;w&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x6253;&#x7B97;&#x4EE4;<img src="/2016/05/16/2016-5-16/17.png" alt="">&#xFF0C;&#x90A3;&#x4E48;&#x52A0;&#x5165;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x4E58;&#x5B50;&#x540E;&#xFF0C;&#x6C42;&#x5BFC;</p>
-<p><img src="/2016/05/16/2016-5-16/16.png" alt=""></p>
-<p>&#x5176;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x77E9;&#x9635;&#x5FAE;&#x79EF;&#x5206;&#xFF0C;&#x6C42;&#x5BFC;&#x65F6;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x5730;&#x628A;<img src="/2016/05/16/2016-5-16/17.png" alt="">&#x5F53;&#x505A;<img src="/2016/05/16/2016-5-16/18.png" alt="">&#x770B;&#x5F85;</p>
-<p>&#x5982;&#x679C;<img src="/2016/05/16/2016-5-16/19.png" alt="">&#x53EF;&#x9006;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x6C42;&#x5BFC;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x4E24;&#x8FB9;&#x90FD;&#x4E58;&#x4EE5;<img src="/2016/05/16/2016-5-16/20.png" alt="">&#xFF0C;&#x5F97;</p>
-<p><img src="/2016/05/16/2016-5-16/22.png" alt=""></p>
-<p>&#x8FD9;&#x4E2A;&#x53EF;&#x559C;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#xFF0C;w&#x662F;&#x77E9;&#x9635;<img src="/2016/05/16/2016-5-16/23.png" alt="">&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x3002;</p>
-<p>&#x8FD9;&#x4E2A;&#x516C;&#x5F0F;&#x79F0;&#x4E3A;Fisher linear discrimination&#x3002;</p>
-<p>&#x7B49;&#x7B49;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x518D;&#x89C2;&#x5BDF;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0;&#x524D;&#x9762;&#x7684;&#x516C;&#x5F0F;</p>
-<p><img src="/2016/05/16/2016-5-16/25.png" alt=""></p>
-<p>&#x90A3;&#x4E48;</p>
-<p><img src="/2016/05/16/2016-5-16/26.png" alt=""></p>
-<p> &#x4EE3;&#x5165;&#x6700;&#x540E;&#x7684;&#x7279;&#x5F81;&#x503C;&#x516C;&#x5F0F;&#x5F97;</p>
-<p><img src="/2016/05/16/2016-5-16/27.png" alt=""></p>
-<p>&#x7531;&#x4E8E;&#x5BF9;w&#x6269;&#x5927;&#x7F29;&#x5C0F;&#x4EFB;&#x4F55;&#x500D;&#x4E0D;&#x5F71;&#x54CD;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x7EA6;&#x53BB;&#x4E24;&#x8FB9;&#x7684;&#x672A;&#x77E5;&#x5E38;&#x6570;<img src="/2016/05/16/2016-5-16/30.png" alt="">&#x548C;<img src="/2016/05/16/2016-5-16/31.png" alt="">&#xFF0C;&#x5F97;&#x5230;</p>
-<p><img src="/2016/05/16/2016-5-16/28.png" alt=""></p>
-<p> &#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x6C42;&#x51FA;&#x539F;&#x59CB;&#x6837;&#x672C;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x5C31;&#x53EF;&#x4EE5;&#x6C42;&#x51FA;&#x6700;&#x4F73;&#x7684;&#x65B9;&#x5411;w&#xFF0C;&#x8FD9;&#x5C31;&#x662F;Fisher&#x4E8E;1936&#x5E74;&#x63D0;&#x51FA;&#x7684;&#x7EBF;&#x6027;&#x5224;&#x522B;&#x5206;&#x6790;&#x3002;</p>
-<p> &#x770B;&#x4E0A;&#x9762;&#x4E8C;&#x7EF4;&#x6837;&#x672C;&#x7684;&#x6295;&#x5F71;&#x7ED3;&#x679C;&#x56FE;&#xFF1A;</p>
-<p> <img src="/2016/05/16/2016-5-16/29.png" alt=""></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2016/05/16/2016-5-16/#more">阅读更多</a>
           
        </p>
     </div>
@@ -214,7 +156,7 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-09T08:10:31.000Z" itemprop="datePublished"> 發表於 2016-04-09</time>
+    <time datetime="2016-04-09T08:10:31.000Z" itemprop="datePublished"> Published 2016-04-09</time>
     
   </p>
 </header>
@@ -278,7 +220,7 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T11:23:45.000Z" itemprop="datePublished"> 發表於 2016-04-05</time>
+    <time datetime="2016-04-05T11:23:45.000Z" itemprop="datePublished"> Published 2016-04-05</time>
     
   </p>
 </header>
@@ -349,7 +291,7 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-05T10:04:06.000Z" itemprop="datePublished"> 發表於 2016-04-05</time>
+    <time datetime="2016-04-05T10:04:06.000Z" itemprop="datePublished"> Published 2016-04-05</time>
     
   </p>
 </header>
@@ -415,7 +357,7 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-04T14:11:02.000Z" itemprop="datePublished"> 發表於 2016-04-04</time>
+    <time datetime="2016-04-04T14:11:02.000Z" itemprop="datePublished"> Published 2016-04-04</time>
     
   </p>
 </header>
@@ -469,7 +411,7 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-04T08:50:59.000Z" itemprop="datePublished"> 發表於 2016-04-04</time>
+    <time datetime="2016-04-04T08:50:59.000Z" itemprop="datePublished"> Published 2016-04-04</time>
     
   </p>
 </header>
@@ -519,15 +461,15 @@
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github 名片</p>
+<p class="asidetitle">Github Card</p>
 <div class="github-card" data-github="flyxu" data-width="220" data-height="119" data-theme="medium">
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -537,7 +479,7 @@
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -562,7 +504,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -586,7 +528,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -605,7 +547,7 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -755,7 +697,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
