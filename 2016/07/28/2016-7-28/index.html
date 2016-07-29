@@ -17,10 +17,14 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/28/2016-7-28/index.html">
 <meta property="og:site_name" content="Xiang的博客">
 <meta property="og:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x7C7B;&amp;#x522B;&amp;#x6570;&amp;#x636E;&amp;#x4E0D;&amp;#x5747;&amp;#x8861;&amp;#x662F;&amp;#x5206;&amp;#x7C7B;&amp;#x4EFB;&amp;#x52A1;&amp;#x4E2D;&amp;#x4E00;&amp;#x4E2A;&amp;#x5178;&amp;#x578B;&amp;#x7684;&amp;#x5B58;&amp;#x5728;&amp;#x7684;&amp;#x95EE;&amp;#x9898;">
-<meta property="og:updated_time" content="2016-07-28T06:50:08.000Z">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/2016-7-28/confusion.png">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/2016-7-28/Gmeans.png">
+<meta property="og:image" content="http://yoursite.com/2016/07/28/2016-7-28/ROC.jpg">
+<meta property="og:updated_time" content="2016-07-29T02:41:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不平衡数据">
 <meta name="twitter:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x7C7B;&amp;#x522B;&amp;#x6570;&amp;#x636E;&amp;#x4E0D;&amp;#x5747;&amp;#x8861;&amp;#x662F;&amp;#x5206;&amp;#x7C7B;&amp;#x4EFB;&amp;#x52A1;&amp;#x4E2D;&amp;#x4E00;&amp;#x4E2A;&amp;#x5178;&amp;#x578B;&amp;#x7684;&amp;#x5B58;&amp;#x5728;&amp;#x7684;&amp;#x95EE;&amp;#x9898;">
+<meta name="twitter:image" content="http://yoursite.com/2016/07/28/2016-7-28/confusion.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Xiang的博客" type="application/atom+xml">
@@ -48,7 +52,7 @@
 				<h1 class="site-name"><a href="/" title="Xiang的博客">Xiang的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -68,7 +72,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -91,16 +95,16 @@
 		<a href="/about" title="xu fly" target="_blank" itemprop="author">xu fly</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-28T04:35:42.000Z" itemprop="datePublished"> 發表於 2016-07-28</time>
+    <time datetime="2016-07-28T04:35:42.000Z" itemprop="datePublished"> Published 2016-07-28</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据层面"><span class="toc-number">2.1.</span> <span class="toc-text">数据层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重采样"><span class="toc-number">2.1.1.</span> <span class="toc-text">重采样</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#上采样"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">上采样</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下采样"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">下采样</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#训练集划分方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">训练集划分方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法层面"><span class="toc-number">2.2.</span> <span class="toc-text">算法层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分类器集成方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">分类器集成方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代价敏感方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">代价敏感方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征选择方法"><span class="toc-number">2.2.3.</span> <span class="toc-text">特征选择方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他算法"><span class="toc-number">2.3.</span> <span class="toc-text">其他算法</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据层面"><span class="toc-number">2.1.</span> <span class="toc-text">数据层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重采样"><span class="toc-number">2.1.1.</span> <span class="toc-text">重采样</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#上采样"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">上采样</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下采样"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">下采样</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#训练集划分方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">训练集划分方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法层面"><span class="toc-number">2.2.</span> <span class="toc-text">算法层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分类器集成方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">分类器集成方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代价敏感方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">代价敏感方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征选择方法"><span class="toc-number">2.2.3.</span> <span class="toc-text">特征选择方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他算法"><span class="toc-number">2.3.</span> <span class="toc-text">其他算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器评价指标"><span class="toc-number">3.</span> <span class="toc-text">分类器评价指标</span></a></li></ol>
 		
 		</div>
 		
@@ -111,7 +115,7 @@
 <h5 id="&#x4E0A;&#x91C7;&#x6837;"><a href="#&#x4E0A;&#x91C7;&#x6837;" class="headerlink" title="&#x4E0A;&#x91C7;&#x6837;"></a>&#x4E0A;&#x91C7;&#x6837;</h5><p>&#x6700;&#x539F;&#x59CB;&#x7684;&#x4E0A;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#x662F;&#x590D;&#x5236;&#x7A00;&#x6709;&#x7C7B;&#x7684;&#x6837;&#x672C; , &#x4F46;&#x662F;&#x8FD9;&#x6837;&#x505A;&#x5BB9;&#x6613;&#x5BFC;&#x81F4;&#x8FC7;&#x5B66;&#x4E60;, &#x5E76;&#x4E14;&#x5BF9;&#x63D0;&#x9AD8;&#x7A00;&#x6709;&#x7C7B;&#x8BC6; &#x522B;&#x7387;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x5E2E;&#x52A9;  .&#x8F83;&#x9AD8;&#x7EA7;&#x7684;&#x4E0A;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#x5219;&#x91C7;&#x7528;&#x4E00;&#x4E9B;&#x542F;&#x53D1;&#x5F0F;&#x6280;&#x5DE7; , &#x6709;&#x9009;&#x62E9;&#x5730;&#x590D;&#x5236;&#x7A00;&#x6709;&#x7C7B;&#x6837;&#x672C; , &#x6216;&#x8005;&#x751F;&#x6210;&#x65B0;&#x7684;&#x7A00;&#x6709;&#x7C7B;&#x6837;&#x672C;&#x3002;Chawla&#x7B49;&#x4EBA;&#x63D0;&#x51FA;&#x7684;SMOTE&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x6709;&#x6548;&#x7684;&#x4E0A;&#x91C7;&#x6837;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x9996;&#x5148;&#x4E3A;&#x6BCF;&#x4E2A;&#x7A00;&#x6709;&#x7C7B;&#x6837;&#x672C;&#x968F;&#x673A;&#x9009;&#x51FA;&#x51E0;&#x4E2A;&#x90BB;&#x8FD1;&#x6837;&#x672C;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8BE5;&#x6837;&#x672C;&#x4E0E;&#x8FD9;&#x4E9B;&#x90BB;&#x8FD1;&#x7684;&#x6837;&#x672C;&#x7684;&#x8FDE;&#x7EBF;&#x4E0A;&#x968F;&#x673A;&#x53D6;&#x70B9;&#xFF0C;&#x751F;&#x6210;&#x65E0;&#x91CD;&#x590D;&#x7684;&#x65B0;&#x7684;&#x7A00;&#x6709;&#x7C7B;&#x6837;&#x672C;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x6DFB;&#x52A0;&#x968F;&#x673A;&#x566A;&#x58F0;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x7684;&#x7814;&#x7A76;&#xFF0C;&#x5177;&#x4F53;&#x53EF;&#x4EE5;&#x770B;&#x76F8;&#x5173;&#x8BBA;&#x6587;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x6709;SMOTE&#x7B97;&#x6CD5;&#x7684;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x8BED;&#x8A00;&#x7684;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#xFF1A;</p>
 <ul>
-<li>Python: [UnbalancedDataset]&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;SMOTE&#x7B97;&#x6CD5;&#x7684;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#xFF0C;&#x4EE5;&#x53CA;&#x591A;&#x79CD;&#x91CD;&#x91C7;&#x6837;&#x7B97;&#x6CD5;&#x3002;</li>
+<li>Python: <a href="https://github.com/scikit-learn-contrib/imbalanced-learn" target="_blank" rel="external">UnbalancedDataset</a>&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;SMOTE&#x7B97;&#x6CD5;&#x7684;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#xFF0C;&#x4EE5;&#x53CA;&#x591A;&#x79CD;&#x91CD;&#x91C7;&#x6837;&#x7B97;&#x6CD5;&#x3002;</li>
 <li>R: <a href="https://cran.r-project.org/web/packages/DMwR/DMwR.pdf" target="_blank" rel="external">DMwR package</a>&#x3002;</li>
 <li>Weka: <a href="http://weka.sourceforge.net/doc.packages/SMOTE/weka/filters/supervised/instance/SMOTE.html" target="_blank" rel="external">SMOTE supervised filter</a>&#x3002;</li>
 </ul>
@@ -127,7 +131,31 @@
 </a>&#x4EE5;&#x57FA;&#x4E8E;&#x4E8B;&#x4F8B;&#x5B66;&#x4E60; (casebasedlearning)&#x7684;&#x6846;&#x67B6;&#x4E3A;&#x57FA;&#x7840;,&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x4E0E;&#x6D4B;&#x8BD5;&#x6837;&#x672C;&#x76F8;&#x5173;&#x7684;&#x52A8;&#x6001;&#x7279;&#x5F81;&#x52A0;&#x6743;&#x65B9;&#x6CD5; .&#x8BE5;&#x65B9;&#x6CD5;&#x9996;&#x5148;&#x5229;&#x7528;&#x8BAD;&#x7EC3;&#x96C6;&#x5F97;&#x5230;&#x4E00;&#x68F5;&#x51B3;&#x7B56;&#x6811;, &#x7136;&#x540E;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x6D4B;&#x8BD5;&#x6837;&#x672C;&#x5728;&#x6D4B;&#x8BD5;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x4FE1;&#x606F;&#x6536;&#x76CA;, &#x5E76;&#x4EE5;&#x6B64;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x7279;&#x5F81;&#x7684;&#x6743;&#x503C;, &#x6700;&#x540E; , &#x4ECE;&#x8BAD;&#x7EC3;&#x96C6;&#x4E2D;&#x6311;&#x9009; k&#x4E2A;&#x4E0E;&#x6D4B;&#x8BD5;&#x6837;&#x672C;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x6837;&#x672C; ,&#x5E76;&#x5BF9;&#x4ED6;&#x4EEC;&#x6D4B;&#x8BD5;&#x7C7B;&#x522B;&#x8FDB;&#x884C;&#x6295;&#x7968; .&#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x63D0;&#x9AD8;&#x6B63;&#x7C7B;&#x6837;&#x672C;&#x51C6;&#x786E;&#x7387;&#x7684;&#x540C;&#x65F6;&#x786E;&#x4FDD;&#x4E86;&#x603B;&#x7684;&#x51C6;&#x786E;&#x7387;&#x4E0D;&#x4E0B;&#x964D;</p>
 <h3 id="&#x5176;&#x4ED6;&#x7B97;&#x6CD5;"><a href="#&#x5176;&#x4ED6;&#x7B97;&#x6CD5;" class="headerlink" title="&#x5176;&#x4ED6;&#x7B97;&#x6CD5;"></a>&#x5176;&#x4ED6;&#x7B97;&#x6CD5;</h3><p>Wu&#x548C; Chang<a href="">  KBA: kernel boundary alignment considering imbalanced data distribution
  </a> &#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x4FEE;&#x6539;&#x652F;&#x6301;&#x5411;&#x91CF;&#x673A;&#x6838;<br>&#x51FD;&#x6570;&#x77E9;&#x9635; (kernelmatrix)&#x65B9;&#x6CD5; , &#x8BE5;&#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x5C06;&#x6838;&#x51FD;&#x6570; &#x77E9;&#x9635;&#x8FDB;&#x884C;&#x4FDD;&#x89D2;&#x53D8;&#x6362;(conformaltransformation), &#x6269;&#x5927; &#x7A00;&#x6709;&#x7C7B;&#x7279;&#x5F81;&#x5411;&#x91CF;&#x5904;&#x7684;&#x8FB9;&#x754C; , &#x4ECE;&#x800C;&#x589E;&#x52A0;&#x6B63;&#x8D1F;&#x7C7B;&#x6837;&#x672C;&#x7684; &#x5206;&#x79BB;&#x5EA6; , &#x51CF;&#x5C11;&#x5927;&#x7C7B;&#x7684;&#x652F;&#x6301;&#x5411;&#x91CF;&#x6570;&#x76EE; , &#x8D77;&#x5230;&#x964D;&#x4F4E;&#x4E0D;&#x5E73;&#x8861; &#x5EA6;&#x7684;&#x6548;&#x679C; .&#x7406;&#x8BBA;&#x5206;&#x6790;&#x548C;&#x4EFF;&#x771F;&#x8BD5;&#x9A8C;&#x7ED3;&#x679C;&#x8868;&#x660E; , &#x8BE5;&#x65B9;&#x6CD5;&#x5728; &#x4E00;&#x4E9B;&#x4E0D;&#x5E73;&#x8861;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x6709;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x6548;&#x679C; .</p>
-<p>&#x4E00; &#x7C7B; &#x5B66; &#x4E60; (one-clas slearning)<a href="">Estimating the support of a high-dimensional distribution</a>&#x4E5F; &#x88AB; &#x7528; &#x4E8E; &#x5904; &#x7406; &#x4E0D;&#x5E73;&#x8861;&#x95EE;&#x9898; .&#x5F53;&#x6837;&#x672C;&#x6570;&#x91CF;&#x4E0D;&#x5E73;&#x8861;&#x65F6; , &#x5E76;&#x4E14;&#x5F53;&#x7279;&#x5F81;&#x7A7A;&#x95F4; &#x4E2D;&#x6DF7;&#x6742;&#x6709;&#x5927;&#x91CF;&#x566A;&#x97F3;&#x7279;&#x5F81;&#x65F6; , &#x57FA;&#x4E8E;&#x5B66;&#x4E60;&#x5355;&#x4E00;&#x7A00;&#x6709;&#x7C7B;&#x6837; &#x672C;&#x7684;&#x4EA7;&#x751F;&#x5F0F;&#x6A21;&#x578B; , &#x76F8;&#x6BD4;&#x4E8E;&#x5B66;&#x4E60;&#x4E24;&#x7C7B;&#x95EE;&#x9898;&#x7684;&#x5224;&#x522B;&#x5F0F;&#x6A21; &#x578B;&#x5177;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;.</p>
+<p>&#x4E00; &#x7C7B; &#x5B66; &#x4E60; (one-clas slearning)<a href="">Estimating the support of a high-dimensional distribution</a>&#x4E5F; &#x88AB; &#x7528; &#x4E8E; &#x5904; &#x7406; &#x4E0D;&#x5E73;&#x8861;&#x95EE;&#x9898; .&#x5F53;&#x6837;&#x672C;&#x6570;&#x91CF;&#x4E0D;&#x5E73;&#x8861;&#x65F6; , &#x5E76;&#x4E14;&#x5F53;&#x7279;&#x5F81;&#x7A7A;&#x95F4; &#x4E2D;&#x6DF7;&#x6742;&#x6709;&#x5927;&#x91CF;&#x566A;&#x97F3;&#x7279;&#x5F81;&#x65F6; , &#x57FA;&#x4E8E;&#x5B66;&#x4E60;&#x5355;&#x4E00;&#x7A00;&#x6709;&#x7C7B;&#x6837;&#x672C;&#x7684;&#x4EA7;&#x751F;&#x5F0F;&#x6A21;&#x578B; , &#x76F8;&#x6BD4;&#x4E8E;&#x5B66;&#x4E60;&#x4E24;&#x7C7B;&#x95EE;&#x9898;&#x7684;&#x5224;&#x522B;&#x5F0F;&#x6A21;&#x578B;&#x5177;&#x6709;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;.</p>
+<h2 id="&#x5206;&#x7C7B;&#x5668;&#x8BC4;&#x4EF7;&#x6307;&#x6807;"><a href="#&#x5206;&#x7C7B;&#x5668;&#x8BC4;&#x4EF7;&#x6307;&#x6807;" class="headerlink" title="&#x5206;&#x7C7B;&#x5668;&#x8BC4;&#x4EF7;&#x6307;&#x6807;"></a>&#x5206;&#x7C7B;&#x5668;&#x8BC4;&#x4EF7;&#x6307;&#x6807;</h2><p>&#x5728;&#x8BC4;&#x4F30;&#x5206;&#x7C7B;&#x5668;&#x7684;&#x6027;&#x80FD;&#x548C;&#x6307;&#x5BFC;&#x5206;&#x7C7B;&#x5668;&#x5EFA;&#x6A21;&#x65B9;&#x9762;&#xFF0C;&#x8BC4;&#x4F30;&#x6807;&#x51C6;&#x53D1;&#x6325;&#x4E86;&#x5173;&#x952E;&#x4F5C;&#x7528;&#x3002; &#x5728;&#x4F20;&#x7EDF;&#x7684;&#x5206;&#x7C7B;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x51C6;&#x786E;&#x7387;&#x662F;&#x5E38;&#x7528;&#x7684;&#x6307;&#x6807;&#x3002; &#x7136;&#x800C;&#x5728;&#x4E0D;&#x5E73;&#x8861;&#x6570;&#x636E;&#x5206;&#x7C7B;&#x4E2D;&#xFF0C;&#x51C6;&#x786E;&#x7387;&#x4E0D;&#x518D;&#x662F;&#x6070;&#x5F53;&#x7684;&#x6307;&#x6807;&#x3002; &#x5728;&#x4E24;&#x7C7B;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x6B63;&#x4F8B;&#x6570;&#x76EE;&#x5F88;&#x5C11;&#x4F46;&#x5177;&#x6709;&#x5F88;&#x9AD8;&#x7684;&#x8BC6;&#x522B;&#x91CD;&#x8981;&#x6027;&#xFF0C;&#x53E6;&#x4E00;&#x7C7B;&#x4E3A;&#x8D1F;&#x4F8B;&#x3002;</p>
+<p><img src="/2016/07/28/2016-7-28/confusion.png" alt=""></p>
+<p>&#x4ECE;&#x8BE5;&#x8868;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E0B;&#x5217;&#x5EA6;&#x91CF;&#x6307;&#x6807;:</p>
+<p>&#x771F;&#x9633;&#x6027;&#x7387;:TPrate= TP/(TP+FN)</p>
+<p>&#x771F;&#x9634;&#x6027;&#x7387;:TNrate=TN/(TN+FP)</p>
+<p>&#x5047;&#x9633;&#x6027;&#x7387;:FPrate=FP/(TN+FP)</p>
+<p>&#x5047;&#x9634;&#x6027;&#x7387;:FNrate=FN/(TP+FN)</p>
+<p>&#x9633;&#x6027;&#x9884;&#x6D4B;&#x503C;:PPvalue=TP/(TP+FP)</p>
+<p>&#x5047;&#x6027;&#x9884;&#x6D4B;&#x503C;:NPvalue=TN/(TN+FN)</p>
+<p>&#x4E0A;&#x8FF0;&#x5EA6;&#x91CF;&#x6307;&#x6807;&#x90FD;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x7684;&#x8BC4;&#x4F30;&#x4E0D;&#x5E73;&#x8861;&#x6570;&#x636E;&#x5206;&#x7C7B;, &#x9488;&#x5BF9;&#x4E0D;&#x5E73;&#x8861;&#x6570;&#x636E;&#x5206;&#x7C7B;&#x6211;&#x4EEC;&#x7528;&#x51E0;&#x4E2A;&#x65B0;&#x7684;&#x5EA6;&#x91CF;&#x6307;&#x6807;&#x5982;&#x4E0B;:</p>
+<p>(1)F-measure</p>
+<p>&#x5728;&#x4FE1;&#x606F;&#x68C0;&#x7D22;&#x9886;&#x57DF;,&#x771F;&#x9633;&#x6027;&#x7387;&#x88AB;&#x79F0;&#x4E3A; recall,</p>
+<p>&#x9633;&#x6027;&#x9884;&#x6D4B;&#x503C;&#x88AB;&#x79F0;&#x4E3A;&#x7CBE;&#x786E;&#x7387;&#x5206;&#x522B;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;:</p>
+<p>Recall =TPrate =TP/(TP+FN),</p>
+<p>Precision =PPvalue = TP/(TP+FP)</p>
+<p>F-measure=2&#xD7;Recall&#xD7;Precision/(Recall+Precision)</p>
+<p>F-measure&#x662F; Precision &#x548C; Recall &#x7684;&#x8C03;&#x548C;&#x5E73;&#x5747;&#x503C;&#x3002; &#x4E24;&#x4E2A;&#x6570;&#x503C;&#x7684;&#x8C03;&#x548C;&#x5E73;&#x5747;&#x66F4;&#x52A0;&#x63A5;&#x8FD1;&#x4E24;&#x4E2A;&#x6570;&#x5F53;&#x4E2D;&#x8F83;&#x5C0F;&#x7684;&#x90A3; &#x4E2A;, &#x56E0;&#x6B64;&#x5982;&#x679C;&#x8981;&#x4F7F;&#x5F97; F-measure &#x5F88;&#x9AD8;&#x7684;&#x8BDD;&#x90A3;&#x4E48; Recall &#x548C; Precision &#x90FD;&#x5FC5;&#x987B;&#x5F88;&#x9AD8;&#x3002;</p>
+<p>(2)G-mean</p>
+<p>&#x5F53;&#x4E24;&#x4E2A;&#x7C7B;&#x522B;&#x7684;&#x6027;&#x80FD;&#x90FD;&#x9700;&#x8981;&#x8003;&#x8651;&#x65F6;,TPrate &#x548C; TNrate &#x9700;&#x8981;&#x540C;&#x65F6;&#x9AD8;,Kubat &#x7B49;&#x4EBA;&#x63D0;&#x51FA;&#x4E86; G-mean&#x3002;</p>
+<p><img src="/2016/07/28/2016-7-28/Gmeans.png" alt=""></p>
+<p>G-mean &#x8BC4;&#x4F30;&#x4E00;&#x4E2A;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x7684;&#x7EFC;&#x5408;&#x6027;&#x80FD;&#x3002; &#x6839;&#x636E;&#x4E4B;&#x524D; &#x7684;&#x7814;&#x7A76;, &#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x83B7;&#x5F97;&#x5C3D;&#x53EF;&#x80FD;&#x591A;&#x7684;&#x5173;&#x4E8E;&#x6BCF;&#x4E2A;&#x7C7B;&#x522B;&#x5BF9;&#x6700; &#x7EC8;&#x6027;&#x80FD;&#x7684;&#x8D21;&#x732E;&#x5927;&#x5C0F;&#x4FE1;&#x606F;,&#x5E76;&#x4E14;&#x8003;&#x8651;&#x5230;&#x6570;&#x636E;&#x7684;&#x4E0D;&#x5E73;&#x8861;&#x7387;, &#x5F88;&#x591A;&#x7814;&#x7A76;&#x8005;&#x8BD5;&#x56FE;&#x5728;&#x4E0D;&#x5E73;&#x8861;&#x9886;&#x57DF;&#x63D0;&#x51FA;&#x65B0;&#x7684;&#x5EA6;&#x91CF;&#x6307;&#x6807;&#x3002; &#x5982;&#x8C03;&#x6574;G-mean,&#x63D0;&#x51FA;&#x4E86; Adjusted G-mean</p>
+<p>(3)ROC &#x66F2;&#x7EBF;&#x4EE5;&#x53CA; AUC</p>
+<p>ROC &#x66F2;&#x7EBF;&#x6307;&#x53D7;&#x8BD5;&#x8005;&#x5DE5;&#x4F5C;&#x7279;&#x5F81;&#x66F2;&#x7EBF;(receiver operat-ing characteristic curve), &#x662F;&#x53CD;&#x6620;&#x654F;&#x611F;&#x6027;&#x548C;&#x7279;&#x5F02;&#x6027;&#x8FDE;&#x7EED; &#x53D8;&#x91CF;&#x7684;&#x7EFC;&#x5408;&#x6307;&#x6807;,&#x7528;&#x6784;&#x56FE;&#x6CD5;&#x63ED;&#x793A;&#x654F;&#x611F;&#x6027;&#x548C;&#x7279;&#x5F02;&#x6027;&#x7684;&#x76F8;&#x4E92; &#x5173;&#x7CFB;&#x3002; &#x5728;&#x5206;&#x7C7B;&#x4E2D;&#x6BCF;&#x4E2A;&#x6837;&#x672C;&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x7C7B;&#x522B;&#x5BF9;&#x5E94;&#x7684;&#x6709;&#x6982;&#x7387; &#x503C;,&#x6700;&#x7EC8;&#x7C7B;&#x522B;&#x9884;&#x6D4B;&#x6839;&#x636E;&#x8BBE;&#x7F6E;&#x7684;&#x4E0D;&#x540C;&#x6982;&#x7387;&#x9608;&#x503C;,&#x7C7B;&#x522B;&#x4E5F;&#x4F1A; &#x53D8;&#x5316;&#x3002; &#x6BCF;&#x4E00;&#x4E2A;&#x9608;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x6709;&#x4E00;&#x7EC4;&#x8861;&#x91CF;&#x6307;&#x6807;(FPrate, TPrate),&#x5C06; FPrate &#x4E3A; x &#x8F74;,TPrate &#x4E3A; y &#x8F74;,&#x5728;&#x5750;&#x6807;&#x8F74;&#x4E0A;&#x7ED8; &#x5236;&#x56FE;&#x5F62;&#x3002; &#x5373;&#x53EF;&#x5F97;&#x5230; ROC &#x66F2;&#x7EBF;,&#x66F2;&#x7EBF;&#x4E0B;&#x65B9;&#x5F62;&#x6210;&#x7684;&#x9762;&#x79EF;&#x5373;&#x4E3A; AUC&#x3002; AUC &#x4ECE;&#x603B;&#x4F53;&#x4E0A;&#x5EA6;&#x91CF;&#x4E86;&#x5206;&#x7C7B;&#x5668;&#x7684;&#x6027;&#x80FD;,&#x4E00; &#x822C;&#x6765;&#x8BF4;&#x9762;&#x79EF;&#x8D8A;&#x5927;,&#x7B97;&#x6CD5;&#x6027;&#x80FD;&#x8D8A;&#x597D;&#x3002; &#x4E0B;&#x56FE; &#x662F;&#x4E00;&#x4E2A; ROC &#x66F2; &#x7EBF;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<p><img src="/2016/07/28/2016-7-28/ROC.jpg" alt=""></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -181,22 +209,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据层面"><span class="toc-number">2.1.</span> <span class="toc-text">数据层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重采样"><span class="toc-number">2.1.1.</span> <span class="toc-text">重采样</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#上采样"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">上采样</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下采样"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">下采样</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#训练集划分方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">训练集划分方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法层面"><span class="toc-number">2.2.</span> <span class="toc-text">算法层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分类器集成方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">分类器集成方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代价敏感方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">代价敏感方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征选择方法"><span class="toc-number">2.2.3.</span> <span class="toc-text">特征选择方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他算法"><span class="toc-number">2.3.</span> <span class="toc-text">其他算法</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据层面"><span class="toc-number">2.1.</span> <span class="toc-text">数据层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重采样"><span class="toc-number">2.1.1.</span> <span class="toc-text">重采样</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#上采样"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">上采样</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下采样"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">下采样</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#训练集划分方法"><span class="toc-number">2.1.2.</span> <span class="toc-text">训练集划分方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法层面"><span class="toc-number">2.2.</span> <span class="toc-text">算法层面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分类器集成方法"><span class="toc-number">2.2.1.</span> <span class="toc-text">分类器集成方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代价敏感方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">代价敏感方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征选择方法"><span class="toc-number">2.2.3.</span> <span class="toc-text">特征选择方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他算法"><span class="toc-number">2.3.</span> <span class="toc-text">其他算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器评价指标"><span class="toc-number">3.</span> <span class="toc-text">分类器评价指标</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github 名片</p>
+<p class="asidetitle">Github Card</p>
 <div class="github-card" data-github="flyxu" data-width="220" data-height="119" data-theme="medium">
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -206,7 +234,7 @@
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -235,7 +263,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -271,7 +299,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -290,7 +318,7 @@
 </div>
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -529,7 +557,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
