@@ -11,23 +11,20 @@
     
 
     
-    <meta name="description" content="Borderline-SMOTE&amp;#xFF1A;
-Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
+    <meta name="description" content="Borderline-SMOTE&amp;#xFF1A;Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SMOTE相关研究">
 <meta property="og:url" content="http://yoursite.com/2016/09/19/2016-9-19/index.html">
 <meta property="og:site_name" content="Xiang的博客">
-<meta property="og:description" content="Borderline-SMOTE&amp;#xFF1A;
-Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
+<meta property="og:description" content="Borderline-SMOTE&amp;#xFF1A;Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
 <meta property="og:image" content="http://yoursite.com/2016/09/19/2016-9-19/borderline-smote.png">
 <meta property="og:image" content="http://yoursite.com/2016/09/19/2016-9-19/smoteboost.png">
 <meta property="og:image" content="http://yoursite.com/2016/09/19/2016-9-19/smote-D.png">
 <meta property="og:image" content="http://yoursite.com/2016/09/19/2016-9-19/C_smote.png">
-<meta property="og:updated_time" content="2016-09-19T06:31:59.000Z">
+<meta property="og:updated_time" content="2016-09-19T06:34:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SMOTE相关研究">
-<meta name="twitter:description" content="Borderline-SMOTE&amp;#xFF1A;
-Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
+<meta name="twitter:description" content="Borderline-SMOTE&amp;#xFF1A;Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
 <meta name="twitter:image" content="http://yoursite.com/2016/09/19/2016-9-19/borderline-smote.png">
 
     
@@ -108,33 +105,28 @@ Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Borderline-SMOTE："><span class="toc-number">1.</span> <span class="toc-text">Borderline-SMOTE：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTEBoost"><span class="toc-number">2.</span> <span class="toc-text">SMOTEBoost:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTE-D"><span class="toc-number">3.</span> <span class="toc-text">SMOTE-D:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-SMOTE"><span class="toc-number">4.</span> <span class="toc-text">C_SMOTE:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTE-DGC"><span class="toc-number">5.</span> <span class="toc-text">SMOTE-DGC:</span></a></li></ol>
 		
 		</div>
 		
-		<p>Borderline-SMOTE&#xFF1A;</p>
-<p><a href="http://download.springer.com/static/pdf/440/chp%253A10.1007%252F11538059_91.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F11538059_91&amp;token2=exp=1474262954~acl=%2Fstatic%2Fpdf%2F440%2Fchp%25253A10.1007%25252F11538059_91.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F11538059_91*~hmac=e986ed4925c2bb65d11a6d29af2369242b36abf4483e4ef2b445a6ffb3db527e" target="_blank" rel="external">Borderline-SMOTE: A New Over-Sampling Method in<br>Imbalanced Data Sets Learning</a></p>
+		<h2 id="Borderline-SMOTE&#xFF1A;"><a href="#Borderline-SMOTE&#xFF1A;" class="headerlink" title="Borderline-SMOTE&#xFF1A;"></a>Borderline-SMOTE&#xFF1A;</h2><p><a href="http://download.springer.com/static/pdf/440/chp%253A10.1007%252F11538059_91.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F11538059_91&amp;token2=exp=1474262954~acl=%2Fstatic%2Fpdf%2F440%2Fchp%25253A10.1007%25252F11538059_91.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F11538059_91*~hmac=e986ed4925c2bb65d11a6d29af2369242b36abf4483e4ef2b445a6ffb3db527e" target="_blank" rel="external">Borderline-SMOTE: A New Over-Sampling Method in<br>Imbalanced Data Sets Learning</a></p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">For each point p in S:</span><br><span class="line">    1. Compute its m nearest neighbors in T. Call this set Mp and let m&apos;= |Mp &#x2229; L|.</span><br><span class="line">    2. If m&apos;= m, p is a noisy example. Ignore p and continue to the next point.</span><br><span class="line">    3. If 0 &#x2264; m&apos;&#x2264;m/2, p is safe. Ignore p and continue to the next point.</span><br><span class="line">    4. If m/2 &#x2264; m&apos;&#x2264; m, add p to the set DANGER.</span><br><span class="line">For each point d in DANGER, apply the SMOTE algorithm to generate synthetic examples.</span><br></pre></td></tr></table></figure>
 <p><img src="/2016/09/19/2016-9-19/borderline-smote.png" alt=""></p>
 <p>&#x4E3B;&#x8981;&#x89E3;&#x51B3;smote&#x4E2D;&#x4F1A;&#x751F;&#x6210;&#x91CD;&#x53E0;&#x6837;&#x672C;&#x7684;&#x95EE;&#x9898;</p>
-<p>SMOTEBoost:</p>
-<p><a href="http://download.springer.com/static/pdf/691/chp%253A10.1007%252F978-3-540-39804-2_12.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-540-39804-2_12&amp;token2=exp=1474263888~acl=%2Fstatic%2Fpdf%2F691%2Fchp%25253A10.1007%25252F978-3-540-39804-2_12.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-540-39804-2_12*~hmac=78a012d7c1c4d5262ced873731b1dbd009f8f09b009e4bf6dd6bc8ccadcc1a79" target="_blank" rel="external">SMOTEBoost: Improving Prediction<br>of the Minority Class in Boosting </a></p>
+<h2 id="SMOTEBoost"><a href="#SMOTEBoost" class="headerlink" title="SMOTEBoost:"></a>SMOTEBoost:</h2><p><a href="http://download.springer.com/static/pdf/691/chp%253A10.1007%252F978-3-540-39804-2_12.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-540-39804-2_12&amp;token2=exp=1474263888~acl=%2Fstatic%2Fpdf%2F691%2Fchp%25253A10.1007%25252F978-3-540-39804-2_12.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-540-39804-2_12*~hmac=78a012d7c1c4d5262ced873731b1dbd009f8f09b009e4bf6dd6bc8ccadcc1a79" target="_blank" rel="external">SMOTEBoost: Improving Prediction<br>of the Minority Class in Boosting </a></p>
 <p><img src="/2016/09/19/2016-9-19/smoteboost.png" alt=""></p>
 <p>&#x4E0E;&#x96C6;&#x6210;&#x5B66;&#x4E60;&#x76F8;&#x7ED3;&#x5408;</p>
-<p>SMOTE-D:</p>
-<p><a href="http://download.springer.com/static/pdf/261/chp%253A10.1007%252F978-3-319-39393-3_18.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-319-39393-3_18&amp;token2=exp=1474260388~acl=%2Fstatic%2Fpdf%2F261%2Fchp%25253A10.1007%25252F978-3-319-39393-3_18.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-319-39393-3_18*~hmac=8dc3af5112ee310b9330564cfe24905057082f7a3e50ca521d56a7a53183c723" target="_blank" rel="external">SMOTE-D a Deterministic Version of SMOT</a></p>
+<h2 id="SMOTE-D"><a href="#SMOTE-D" class="headerlink" title="SMOTE-D:"></a>SMOTE-D:</h2><p><a href="http://download.springer.com/static/pdf/261/chp%253A10.1007%252F978-3-319-39393-3_18.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-319-39393-3_18&amp;token2=exp=1474260388~acl=%2Fstatic%2Fpdf%2F261%2Fchp%25253A10.1007%25252F978-3-319-39393-3_18.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-319-39393-3_18*~hmac=8dc3af5112ee310b9330564cfe24905057082f7a3e50ca521d56a7a53183c723" target="_blank" rel="external">SMOTE-D a Deterministic Version of SMOT</a></p>
 <p><img src="/2016/09/19/2016-9-19/smote-D.png" alt=""></p>
 <p>&#x8FD1;&#x90BB;&#x6837;&#x672C;&#x4E0E;&#x5C11;&#x6570;&#x7C7B;&#x6837;&#x672C;&#x8DDD;&#x79BB;&#x8D8A;&#x957F;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x6837;&#x672C;&#x8D8A;&#x591A;&#xFF0E;</p>
 <p>AND-SMOTE:</p>
 <p><a href="http://delivery.acm.org/10.1145/2860000/2857648/a100-Yun.pdf?ip=114.212.87.102&amp;id=2857648&amp;acc=ACTIVE%20SERVICE&amp;key=BF85BBA5741FDC6E%2E180A41DAF8736F97%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&amp;CFID=839486987&amp;CFTOKEN=24756321&amp;__acm__=1474264200_b0e273097721862545bda3d03e010c08" target="_blank" rel="external">Automatic Determination of Neighborhood Size in SMOTE</a></p>
 <p>&#x9488;&#x5BF9;smote&#x7B97;&#x6CD5;&#x4E2D;k&#x503C;&#x4E0D;&#x786E;&#x5B9A;&#x95EE;&#x9898;&#xFF0C;&#x505A;&#x7684;&#x6539;&#x5584;&#xFF0C;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x5C11;&#x6570;&#x7C7B;&#x6837;&#x672C;&#x9700;&#x8981;&#x7684;k&#x4E2A;&#x8FD1;&#x90BB;&#x6837;&#x672C;&#xFF0E;</p>
-<p>C_SMOTE:</p>
-<p><a href="http://cdmd.cnki.com.cn/Article/CDMD-11912-1014220587.htm" target="_blank" rel="external">&#x968F;&#x673A;&#x68EE;&#x6797;&#x7B97;&#x6CD5;&#x4F18;&#x5316;&#x7814;&#x7A76;</a></p>
+<h2 id="C-SMOTE"><a href="#C-SMOTE" class="headerlink" title="C_SMOTE:"></a>C_SMOTE:</h2><p><a href="http://cdmd.cnki.com.cn/Article/CDMD-11912-1014220587.htm" target="_blank" rel="external">&#x968F;&#x673A;&#x68EE;&#x6797;&#x7B97;&#x6CD5;&#x4F18;&#x5316;&#x7814;&#x7A76;</a></p>
 <p><img src="/2016/09/19/2016-9-19/C_smote.png" alt=""></p>
 <p>C_SMOTE&#x4E0D;&#x9700;&#x8981;&#x9009;&#x62E9;K&#x4E2A;&#x8FD1;&#x90BB;&#xFF0C;&#x4F7F;&#x65B0;&#x4EA7;&#x751F;&#x7684;&#x5C11;&#x6570;&#x7C7B;&#x6837;&#x672C;&#x5411;&#x91CD;&#x5FC3;&#x8D8B;&#x8FD1;&#xFF0C;&#x4E0D;&#x4F1A;&#x504F;&#x79BB;&#x51FA;&#x5C11;&#x6570;&#x7C7B;&#x7684;&#x6837;&#x672C;&#x7A7A;&#x95F4;</p>
-<p>SMOTE-DGC:</p>
-<p><a href="http://download.springer.com/static/pdf/480/chp%253A10.1007%252F978-3-319-42294-7_11.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-319-42294-7_11&amp;token2=exp=1474267530~acl=%2Fstatic%2Fpdf%2F480%2Fchp%25253A10.1007%25252F978-3-319-42294-7_11.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-319-42294-7_11*~hmac=f29d5db64285215136e98232bd221b9be5f0892241c8b6d9dee9fd2df9b93aa2" target="_blank" rel="external">SMOTE-DGC: An Imbalanced Learning Approach of Data Gravitation Based Classification</a></p>
+<h2 id="SMOTE-DGC"><a href="#SMOTE-DGC" class="headerlink" title="SMOTE-DGC:"></a>SMOTE-DGC:</h2><p><a href="http://download.springer.com/static/pdf/480/chp%253A10.1007%252F978-3-319-42294-7_11.pdf?originUrl=http%3A%2F%2Flink.springer.com%2Fchapter%2F10.1007%2F978-3-319-42294-7_11&amp;token2=exp=1474267530~acl=%2Fstatic%2Fpdf%2F480%2Fchp%25253A10.1007%25252F978-3-319-42294-7_11.pdf%3ForiginUrl%3Dhttp%253A%252F%252Flink.springer.com%252Fchapter%252F10.1007%252F978-3-319-42294-7_11*~hmac=f29d5db64285215136e98232bd221b9be5f0892241c8b6d9dee9fd2df9b93aa2" target="_blank" rel="external">SMOTE-DGC: An Imbalanced Learning Approach of Data Gravitation Based Classification</a></p>
 <p>&#x5C06;smote&#x7B97;&#x6CD5;&#x548C;DGC&#x5206;&#x7C7B;&#x5668;&#x7EC4;&#x5408;&#xFF0C;DGC&#xFF08;data gravitation-based classification &#xFF09;&#x662F;&#x672C;&#x6587;&#x4F5C;&#x8005;&#x4E4B;&#x524D;&#x505A;&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x7C7B;&#x5668;&#xFF0E;</p>
   
 	</div>
@@ -194,7 +186,7 @@ Borderline-SMOTE: A New Over-Sampling Method inImbalanced Data Sets Learning">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Borderline-SMOTE："><span class="toc-number">1.</span> <span class="toc-text">Borderline-SMOTE：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTEBoost"><span class="toc-number">2.</span> <span class="toc-text">SMOTEBoost:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTE-D"><span class="toc-number">3.</span> <span class="toc-text">SMOTE-D:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-SMOTE"><span class="toc-number">4.</span> <span class="toc-text">C_SMOTE:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMOTE-DGC"><span class="toc-number">5.</span> <span class="toc-text">SMOTE-DGC:</span></a></li></ol>
  
   </div>
 
